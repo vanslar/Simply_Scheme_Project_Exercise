@@ -18,7 +18,9 @@
 		(accumulate  + (every (match colo) hand_card)))) 
 
 (define (suit-counts hand_card)
-		(se (count-suit 's hand_card) (count-suit 'h hand_card) (count-suit 'c hand_card) (count-suit 'd hand_card)))
+;		(se (count-suit 's hand_card) (count-suit 'h hand_card) (count-suit 'c hand_card) (count-suit 'd hand_card)))
+		(every (lambda (s)
+					(count-suit s hand_card)) '(s h c d))
 
 (define (suit-dist-points num)
 		(cond ((= num 0) 3)
